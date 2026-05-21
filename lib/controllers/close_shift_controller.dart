@@ -53,7 +53,7 @@ class CloseShiftController extends GetxController {
         .parse(litrePriceController.text)
         .toDouble();
 
-    if ((totalLitres ?? 0) == 0) {
+    if ((totalLitres) == 0) {
       totalRevenue.value = 0;
     }
 
