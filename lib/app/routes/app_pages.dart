@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fuel_flow/app/routes/app_routes.dart';
 import 'package:fuel_flow/controllers/close_shift_controller.dart';
 import 'package:fuel_flow/controllers/fuel_purchase_controller.dart';
 import 'package:fuel_flow/controllers/insert_card_controller.dart';
@@ -12,20 +13,13 @@ import 'package:fuel_flow/screens/insert_card/insert_card_screen.dart';
 import 'package:fuel_flow/screens/insert_pin/insert_pin_screen.dart';
 import 'package:fuel_flow/screens/payment_method/payment_method_screen.dart';
 import 'package:fuel_flow/screens/purchase/purchase_screen.dart';
-import 'package:fuel_flow/screens/splash/splash_screen.dart';
 import 'package:fuel_flow/screens/start_shift/start_shift_screen.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter router = GoRouter(
+  initialLocation: AppRoutes.startShift,
   routes: <RouteBase>[
-    GoRoute(
-      path: '/',
-      builder: (BuildContext context, GoRouterState state) {
-        return const SplashScreen();
-      },
-    ),
-
     GoRoute(
       path: '/start-shift',
       builder: (BuildContext context, GoRouterState state) {
