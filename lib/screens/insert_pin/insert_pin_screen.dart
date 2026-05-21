@@ -40,7 +40,9 @@ class InsertPinScreen extends GetView<InsertPinController> {
               onChanged: controller.onPinChanged,
               onCompleted: controller.onPinCompleted,
             ),
+
             const SizedBox(height: 24),
+
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 4.0, // horizontal gap between chips
@@ -55,7 +57,9 @@ class InsertPinScreen extends GetView<InsertPinController> {
                 ),
               ],
             ),
+
             const SizedBox(height: 24),
+
             PrimaryButton(
               text: 'Proceed',
               icon: Icons.arrow_forward,

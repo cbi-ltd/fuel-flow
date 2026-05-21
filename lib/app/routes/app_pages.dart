@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fuel_flow/controllers/close_shift_controller.dart';
 import 'package:fuel_flow/controllers/fuel_purchase_controller.dart';
+import 'package:fuel_flow/controllers/insert_card_controller.dart';
 import 'package:fuel_flow/controllers/insert_pin_controller.dart';
 import 'package:fuel_flow/controllers/payment_method_controller.dart';
 import 'package:fuel_flow/controllers/purchase_controller.dart';
 import 'package:fuel_flow/controllers/start_shift_controller.dart';
 import 'package:fuel_flow/screens/close_shift/close_shift_screen.dart';
 import 'package:fuel_flow/screens/fuel_purchase/fuel_purchase_screen.dart';
+import 'package:fuel_flow/screens/insert_card/insert_card_screen.dart';
 import 'package:fuel_flow/screens/insert_pin/insert_pin_screen.dart';
 import 'package:fuel_flow/screens/payment_method/payment_method_screen.dart';
 import 'package:fuel_flow/screens/purchase/purchase_screen.dart';
@@ -45,7 +47,7 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/fuel-purchase',
       builder: (BuildContext context, GoRouterState state) {
-        Get.lazyPut(() => FuelPurchaseController());
+        Get.put(FuelPurchaseController());
 
         return const FuelPurchaseScreen();
       },
@@ -66,6 +68,15 @@ final GoRouter router = GoRouter(
         Get.lazyPut(() => PurchaseController());
 
         return const PurchaseScreen();
+      },
+    ),
+
+    GoRoute(
+      path: '/insert-card',
+      builder: (BuildContext context, GoRouterState state) {
+        Get.lazyPut(() => InsertCardController());
+
+        return const InsertCardScreen();
       },
     ),
 

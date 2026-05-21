@@ -1,4 +1,4 @@
-import 'package:device_info_plus/device_info_plus.dart';
+// import 'package:device_info_plus/device_info_plus.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 
@@ -21,8 +21,8 @@ class SplashController extends GetxController {
 
   Future<void> _getTerminalSerial() async {
     try {
-      final deviceInfo = DeviceInfoPlugin();
-      final androidInfo = await deviceInfo.androidInfo;
+      // final deviceInfo = DeviceInfoPlugin();
+      // final androidInfo = await deviceInfo.androidInfo;
       // final serial = androidInfo.serialNumber.isNotEmpty
       //     ? androidInfo.serialNumber
       //     : androidInfo.id;
