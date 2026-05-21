@@ -17,6 +17,21 @@ class FuelPurchaseController extends GetxController {
     super.onInit();
     // Add listener to automatically calculate total amount when litres are typed
     litreToDispenseController.addListener(_calculateTotal);
+    amountController.addListener(_syncAmountToTotal);
+  }
+
+  void _syncAmountToTotal() {
+    final amountText = amountController.text;
+
+    if (amountText.isEmpty) {
+      if (litreToDispenseController.text.isEmpty) {
+        totalAmount.value = 0;
+      }
+      return;
+    }
+
+    final amount = int.tryParse(amountText) ?? 0;
+    totalAmount.value = amount;
   }
 
   void _calculateTotal() {

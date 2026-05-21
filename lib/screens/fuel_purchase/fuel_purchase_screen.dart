@@ -10,8 +10,6 @@ import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
 class FuelPurchaseScreen extends GetView<FuelPurchaseController> {
-  // final DateTime localTime = DateTime.now();
-
   const FuelPurchaseScreen({super.key});
 
   @override
@@ -45,7 +43,7 @@ class FuelPurchaseScreen extends GetView<FuelPurchaseController> {
                       10.0,
                     ), // Optional: rounded corners
                   ),
-                  color: AppColors.card,
+                  color: AppColors.surface,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -111,7 +109,7 @@ class FuelPurchaseScreen extends GetView<FuelPurchaseController> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(
-                                    Icons.heat_pump,
+                                    Icons.local_gas_station,
                                     color: AppColors.primary,
                                   ),
                                   Text(
@@ -187,7 +185,7 @@ class FuelPurchaseScreen extends GetView<FuelPurchaseController> {
                     side: BorderSide(color: AppColors.cardBorder),
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: AppColors.card,
+                  color: AppColors.surface,
                   child: Padding(
                     padding: EdgeInsets.all(8.0),
                     child: SizedBox(
