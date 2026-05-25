@@ -8,4 +8,5 @@ class AppRoutes {
   static const String insertPin = '/insert-pin';
   static const String purchase = '/purchase';
   static const String transferIn = '/transfer-in';
+  static const String paymentConfirmation = '/payment-confirmation';
 }
