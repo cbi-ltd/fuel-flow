@@ -32,9 +32,13 @@ class PaymentConfirmationScreen extends GetView<PaymentConfirmationController> {
                     color: AppColors.primary,
                   ),
                 ),
+
                 const SizedBox(height: 24),
+
                 Column(children: [_icon(status), _title(status)]),
+
                 const SizedBox(height: 24),
+
                 PrimaryButton(
                   text: 'Close',
                   isOutlined: true,

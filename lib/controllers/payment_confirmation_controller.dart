@@ -52,10 +52,4 @@ class PaymentConfirmationController extends GetxController {
       }
     });
   }
-
-  @override
-  void dispose() {
-    fuelPurchaseController.dispose();
-    super.dispose();
-  }
 }

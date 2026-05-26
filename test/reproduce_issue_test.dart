@@ -16,7 +16,7 @@ void main() {
       controller.closingMeterReadingController.text = '45130.5';
       // The listener should be triggered
       expect(controller.totalLitresSold.value, 10.0);
-      expect(controller.closingMeterReading.value, '45130.5');
+      expect(controller.closingMeterReading, '45130.5');
     });
 
     test('Calculation of total revenue', () {
