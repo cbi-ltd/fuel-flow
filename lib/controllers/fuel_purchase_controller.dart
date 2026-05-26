@@ -79,10 +79,10 @@ class FuelPurchaseController extends GetxController {
   }
 
   @override
-  void dispose() {
+  void onClose() {
     litrePriceController.dispose();
     litreToDispenseController.dispose();
     amountController.dispose();
-    super.dispose();
+    super.onClose();
   }
 }

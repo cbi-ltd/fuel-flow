@@ -9,4 +9,5 @@ class AppRoutes {
   static const String purchase = '/purchase';
   static const String transferIn = '/transfer-in';
   static const String paymentConfirmation = '/payment-confirmation';
+  static const String payWithCash = '/pay-with-cash';
 }

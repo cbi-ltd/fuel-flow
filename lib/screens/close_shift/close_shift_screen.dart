@@ -44,7 +44,6 @@ class CloseShiftScreen extends GetView<CloseShiftController> {
                   ],
                 ),
               ),
-
               Card(
                 shape: RoundedRectangleBorder(
                   side: BorderSide(color: AppColors.cardBorder),
@@ -70,32 +69,30 @@ class CloseShiftScreen extends GetView<CloseShiftController> {
                               color: AppColors.primary,
                             ),
                           ),
-
                           const SizedBox(width: 8),
-
-                          Column(
-                            spacing: 2.0,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Attendant'),
-                              Text(
-                                'John Doe',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 16,
+                          Expanded(
+                            child: Column(
+                              spacing: 2.0,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Attendant'),
+                                Text(
+                                  'John Doe',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 16,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ],
                       ),
-
                       Divider(
                         color: AppColors.border,
                         thickness: 1,
                         height: 20,
                       ),
-
                       Row(
                         children: [
                           Container(
@@ -111,22 +108,22 @@ class CloseShiftScreen extends GetView<CloseShiftController> {
                               color: AppColors.primary,
                             ),
                           ),
-
                           const SizedBox(width: 8),
-
-                          Column(
-                            spacing: 2.0,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Active Pump'),
-                              Text(
-                                'Pump 2 - Petrol',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 16,
+                          Expanded(
+                            child: Column(
+                              spacing: 2.0,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Active Pump'),
+                                Text(
+                                  'Pump 2 - Petrol',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 16,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -134,7 +131,6 @@ class CloseShiftScreen extends GetView<CloseShiftController> {
                   ),
                 ),
               ),
-
               CustomTextField(
                 label: 'Closing Meter Reading',
                 controller: controller.closingMeterReadingController,
@@ -148,7 +144,6 @@ class CloseShiftScreen extends GetView<CloseShiftController> {
                 },
                 prefixIcon: Icons.gas_meter,
               ),
-
               Card(
                 elevation: 1,
                 shape: RoundedRectangleBorder(
@@ -167,8 +162,8 @@ class CloseShiftScreen extends GetView<CloseShiftController> {
                         ),
                         border: Border(
                           bottom: BorderSide(
-                            color: AppColors.cardBorder, // Choose your color
-                            width: 1.0, // Choose your thickness
+                            color: AppColors.cardBorder,
+                            width: 1.0,
                           ),
                         ),
                       ),
@@ -180,15 +175,16 @@ class CloseShiftScreen extends GetView<CloseShiftController> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         spacing: 4.0,
                         children: [
-                          Icon(Icons.receipt_long),
-                          Text(
-                            'Shift Summary',
-                            style: TextStyle(fontWeight: FontWeight.w800),
+                          const Icon(Icons.receipt_long),
+                          const Expanded(
+                            child: Text(
+                              'Shift Summary',
+                              style: TextStyle(fontWeight: FontWeight.w800),
+                            ),
                           ),
                         ],
                       ),
                     ),
-
                     Padding(
                       padding: const EdgeInsets.all(12),
                       child: Column(
@@ -197,44 +193,49 @@ class CloseShiftScreen extends GetView<CloseShiftController> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Opening Reading'),
-
-                              Text(
-                                controller.openingMeterReading.toString(),
-                                style: TextStyle(fontWeight: FontWeight.w800),
+                              const Flexible(child: Text('Opening Reading')),
+                              const SizedBox(width: 8),
+                              Flexible(
+                                child: Text(
+                                  controller.openingMeterReading.toString(),
+                                  textAlign: TextAlign.end,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
-
                           SizedBox(
                             width: double.infinity,
                             child: CustomPaint(painter: DashedLinePainter()),
                           ),
-
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Closing Reading'),
-
-                              Obx(() {
-                                return Text(
-                                  controller.closingMeterReading.value,
-                                  style: TextStyle(fontWeight: FontWeight.w800),
-                                );
-                              }),
+                              const Flexible(child: Text('Closing Reading')),
+                              const SizedBox(width: 8),
+                              Flexible(
+                                child: Obx(() {
+                                  return Text(
+                                    controller.closingMeterReading.value,
+                                    textAlign: TextAlign.end,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                                  );
+                                }),
+                              ),
                             ],
                           ),
-
                           SizedBox(
                             width: double.infinity,
                             child: CustomPaint(painter: DashedLinePainter()),
                           ),
-
                           Container(),
                         ],
                       ),
                     ),
-
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
@@ -250,47 +251,59 @@ class CloseShiftScreen extends GetView<CloseShiftController> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  'TOTAL LITRES SOLD',
-                                  style: TextStyle(fontWeight: FontWeight.w600),
-                                ),
-
-                                Obx(() {
-                                  return Text(
-                                    controller.totalLitresSold.toString(),
+                                const Flexible(
+                                  child: Text(
+                                    'TOTAL LITRES SOLD',
                                     style: TextStyle(
-                                      fontWeight: FontWeight.w800,
-                                      color: AppColors.primary,
+                                      fontWeight: FontWeight.w600,
                                     ),
-                                  );
-                                }),
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Flexible(
+                                  child: Obx(() {
+                                    return Text(
+                                      controller.totalLitresSold.toString(),
+                                      textAlign: TextAlign.end,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.w800,
+                                        color: AppColors.primary,
+                                      ),
+                                    );
+                                  }),
+                                ),
                               ],
                             ),
-
                             Divider(
                               color: AppColors.border,
                               thickness: 1,
                               height: 20,
                             ),
-
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  'TOTAL REVENUE',
-                                  style: TextStyle(fontWeight: FontWeight.w600),
-                                ),
-
-                                Obx(() {
-                                  return Text(
-                                    Formatters.formatAmount.format(
-                                      controller.totalRevenue.value,
-                                    ),
+                                const Flexible(
+                                  child: Text(
+                                    'TOTAL REVENUE',
                                     style: TextStyle(
-                                      fontWeight: FontWeight.w800,
+                                      fontWeight: FontWeight.w600,
                                     ),
-                                  );
-                                }),
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Flexible(
+                                  child: Obx(() {
+                                    return Text(
+                                      Formatters.formatAmount.format(
+                                        controller.totalRevenue.value,
+                                      ),
+                                      textAlign: TextAlign.end,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    );
+                                  }),
+                                ),
                               ],
                             ),
                           ],
@@ -300,7 +313,6 @@ class CloseShiftScreen extends GetView<CloseShiftController> {
                   ],
                 ),
               ),
-
               PrimaryButton(
                 text: 'Save and Close Shift',
                 icon: Icons.lock,

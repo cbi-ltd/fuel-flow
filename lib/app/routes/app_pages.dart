@@ -4,6 +4,7 @@ import 'package:fuel_flow/controllers/close_shift_controller.dart';
 import 'package:fuel_flow/controllers/fuel_purchase_controller.dart';
 import 'package:fuel_flow/controllers/insert_card_controller.dart';
 import 'package:fuel_flow/controllers/insert_pin_controller.dart';
+import 'package:fuel_flow/controllers/pay_with_cash_controller.dart';
 import 'package:fuel_flow/controllers/payment_confirmation_controller.dart';
 import 'package:fuel_flow/controllers/payment_method_controller.dart';
 import 'package:fuel_flow/controllers/purchase_controller.dart';
@@ -13,6 +14,7 @@ import 'package:fuel_flow/screens/close_shift/close_shift_screen.dart';
 import 'package:fuel_flow/screens/fuel_purchase/fuel_purchase_screen.dart';
 import 'package:fuel_flow/screens/insert_card/insert_card_screen.dart';
 import 'package:fuel_flow/screens/insert_pin/insert_pin_screen.dart';
+import 'package:fuel_flow/screens/pay_with_cash/pay_with_cash_screen.dart';
 import 'package:fuel_flow/screens/payment_confirmation/payment_confirmation_screen.dart';
 import 'package:fuel_flow/screens/payment_method/payment_method_screen.dart';
 import 'package:fuel_flow/screens/purchase/purchase_screen.dart';
@@ -84,6 +86,15 @@ final GoRouter router = GoRouter(
         Get.lazyPut(() => TransferInController());
 
         return const TransferInScreen();
+      },
+    ),
+
+    GoRoute(
+      path: '/pay-with-cash',
+      builder: (BuildContext context, GoRouterState state) {
+        Get.lazyPut(() => PayWithCashController());
+
+        return const PayWithCashScreen();
       },
     ),
 
